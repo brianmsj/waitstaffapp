@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>WaitStaff Application</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+ <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body ng-controller='main'>
+<body ng-controller='main as vm'>
   <h1 class='main-title'>Waitstaff Calculator</h1>
   <div class='row'>
   <div class='col-6 meal-detail'>
@@ -16,9 +17,15 @@
       <h3>Enter the Meal Details</h3>
     </div>
     <div class='container'>
-      <form class='meal-detail' name='meal-detail'>
+      <form class='meal-detail' name='meal' novalidate>
         <label for='basemeal'>Base Meal Price:</label>
-        <input type='text'></input>
+        <input ng-model=vm.price required ng-pattern="/^\d+$/" name='price'type='text'></input>
+        <span class="alert alert-warning" ng-if="meal.price.$error.required">
+              Price required!
+        </span>
+        <span class="alert alert-warning" ng-if="meal.price.$error.pattern">
+              Must be a number!
+        </span>
         <label for='taxrate'>Tax Rate %:</label>
         <input type='text'></input>
         <label for='tippercentage'>Tip Percentage %:</label>
