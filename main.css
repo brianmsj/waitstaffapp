@@ -1,0 +1,39 @@
+.main-title {
+ text-align: center;
+}
+.meal-detail {
+}
+
+.banner {
+  border: 2px solid black;
+  text-align: center;
+}
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    clear: both;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+
+}
+ input {
+    width: 50%;
+    clear: both;
+    margin-left: 10px;
+
+}
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}
+.buttons {
+  display: inline-block;
+  width: 100px;
+  margin-top: 20px;
+}
+p {
+  font-weight: bold;
+}
