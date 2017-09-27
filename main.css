@@ -19,10 +19,13 @@
 
 }
  input {
-    width: 50%;
+    width: 100px;
     clear: both;
     margin-left: 10px;
 
+}
+.red {
+  border: 1px solid red;
 }
 label {
   display: inline-block;
@@ -36,4 +39,7 @@ label {
 }
 p {
   font-weight: bold;
+}
+#one,#two,#three {
+  margin-bottom: -10px;
 }
