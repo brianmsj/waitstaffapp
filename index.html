@@ -12,38 +12,41 @@
 <body ng-controller='main as vm'>
   <h1 class='main-title'>Waitstaff Calculator</h1>
   <div class='row'>
-  <div class='col-7 meal-detail'>
+  <div class='col-6 meal-detail'>
     <div class='banner'>
       <h3>Enter the Meal Details</h3>
     </div>
     <div class='container'>
       <form class='meal-detail' name='myForms.meal' novalidate ng-submit="submit()">
         <label data-toggle="tooltip" title="enter meal price" for='basemeal'>Base Meal Price:</label>
-        <input id=one ng-model=vm.price required ng-pattern="/^\d+$/" name='price'type='text'></input>
-        <span ng-if="myForms.meal.price.$error.required" class="alert-danger">Price required</span>
-        <span ng-if="myForms.meal.price.$error.pattern" class="alert-danger">Must be a number</span><br>
+        <input id=one ng-model=vm.price required ng-pattern="/^\d+(?:\.\d+)?$/" name='price'type='text'></input>
+          <span ng-if="myForms.meal.price.$error.required" class="alert-danger">Price required</span>
+          <span ng-if="myForms.meal.price.$error.pattern" class="alert-danger">Must be a number</span><br>
+
         <label data-toggle="tooltip" title="tax rate"  for='taxrate'>Tax Rate %:</label>
-        <input id=two type='text' name='tax' ng-model=vm.taxrate required ng-pattern="/^\d+$/ || /^\d+\.\d{0,2}$/"></input>
-        <span ng-if="myForms.meal.tax.$error.required" class="alert-danger">Tax rate required</span>
-        <span ng-if="myForms.meal.tax.$error.pattern" class="alert-danger">Must be a number</span><br>
+        <input id=two type='text' name='tax' ng-model=vm.taxrate required ng-pattern='/^\d+(?:\.\d+)?$/'></input>
+          <span ng-if="myForms.meal.tax.$error.required" class="alert-danger">Tax rate required</span>
+          <span ng-if="myForms.meal.tax.$error.pattern" class="alert-danger">Must be a number</span><br>
+
         <label data-toggle="tooltip" title="tip perentage" for='tippercentage'>Tip Percentage %:</label>
-        <input id=three type='text' ng-model=vm.percentage name='tip' required ng-pattern="/^\d+$/" ></input>
-        <span ng-if="myForms.meal.tip.$error.required" class="alert-danger">Tip required</span>
-        <span ng-if="myForms.meal.tip.$error.pattern" class="alert-danger">Must be a number</span><br>
+        <input id=three type='text' ng-model=vm.percentage name='tip' required ng-pattern="/^\d+(?:\.\d+)?$/" ></input>
+          <span ng-if="myForms.meal.tip.$error.required" class="alert-danger">Tip required</span>
+          <span ng-if="myForms.meal.tip.$error.pattern" class="alert-danger">Must be a number</span><br>
+          
         <input class='buttons' type='submit' value='Submit'></input>
         <input class='buttons' type='button' value='Cancel'></input>
       </form>
     </div>
   </div>
-  <div class='col-5 customerCharges'>
+  <div class='col-6 customerCharges'>
     <div class='banner'>
       <h3>Customer Charges</h3>
     </div>
   <div class='container'>
-    <p>Subtotal: $ {{vm.firstSubtotal}} </p>
-    <p>Tip: </p>
+    <p>Subtotal: $ {{ vm.firstSubtotal }} </p>
+    <p>Tip: $ {{ vm.tiptotal }} </p>
     <hr>
-    <p>Total: </p>
+    <p>Total: $ {{ vm.totalbill }} </p>
   </div>
   </div>
   </div>
