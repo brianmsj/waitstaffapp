@@ -45,7 +45,26 @@ angular.module('myApp',[])
     vm.averagetips = vm.averagetips.toFixed(2)
     console.log(vm.totaltips)
   }
-
+  vm.cancel = function() {
+    vm.price = 0;
+    vm.taxrate = 0;
+    vm.percentage = 0;
+    vm.firstSubtotal = 0;
+    vm.tiptotal = 0;
+    vm.totalbill = 0;
+  }
+  vm.reset = function() {
+    vm.price = 0;
+    vm.taxrate = 0;
+    vm.percentage = 0;
+    vm.firstSubtotal = 0;
+    vm.tiptotal = 0;
+    vm.totalbill = 0;
+    vm.customercount = 0;
+    vm.totaltipsarray = []
+    vm.totaltips = 0;
+    vm.averagetips = 0;
+  }
 $scope.myForms = {};
     $scope.submit = function() {
         if($scope.myForms.meal.$valid) {

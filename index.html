@@ -32,9 +32,10 @@
         <input id=three type='text' ng-model=vm.percentage name='tip' required ng-pattern="/^\d+(?:\.\d+)?$/" ></input>
           <span ng-if="myForms.meal.tip.$error.required" class="alert-danger">Tip required</span>
           <span ng-if="myForms.meal.tip.$error.pattern" class="alert-danger">Must be a number</span><br>
-
-        <input class='buttons' type='submit' value='Submit'></input>
-        <input class='buttons' type='button' value='Cancel'></input>
+        <div class='buttons-container'>
+        <input id=five class='btn btn-primary' type='submit' value='Submit'></input>
+        <input id=six class='btn btn-danger' ng-click="vm.cancel()" type='button' value='Cancel'></input>
+        </div>
       </form>
     </div>
   </div>
@@ -63,6 +64,7 @@
     </div>
   </div>
   </div>
+  <input id=four class='btn btn-danger' type='button' ng-click='vm.reset()' value='reset'></input>
 
     <script src="app.js"></script>
     <script>

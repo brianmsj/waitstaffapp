@@ -33,14 +33,24 @@ label {
   width: 140px;
   text-align: right;
 }
-.buttons {
+
+.buttons-container {
   display: inline-block;
-  width: 100px;
-  margin-top: 20px;
 }
 p {
   font-weight: bold;
 }
 #one,#two,#three {
   margin-bottom: -10px;
+}
+#five,#six {
+  margin-top: 10px;
+  margin-left: 3px;
+}
+#five {
+  margin-left: 70px;
+}
+#four {
+  float: right;
+  margin-right: 90px;
 }
